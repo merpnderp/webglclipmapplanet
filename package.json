@@ -15,11 +15,17 @@
 	},
 
 	"scripts": {
-		"start": "node app.js",
-		"build-js": "browserify publis/app.js | uglifyjs -mc > static/bundle.js",
-		"buildlib-js": "broswerify public/lib/lib.js | uglifyjs -mc > static/lib.js",
-		"watch-js" : "watchify ",
-		"watch" : "npm run watch-js & npm run watchWorker-js",
+		"start": "npm run build & node app.js",
+		"start-dev": "npm run watch & npm start",
+
+		"build-js": "browserify -t brfs -x public/libs/three.js -x public/libs/stats.js app/main.js -o public/static/app.js",
+		"buildlib-js": "browserify -r public/libs/three.js -r public/libs/stats.js > public/static/libs.js",
+		"build" : "npm run buildlib-js & npm run build-js",
+
+		"watch-js" : "watchify -v -t brfs -x public/libs/three.js -x public/libs/stats.js app/app.js -o public/static/app.js",
+		"watch-worker-js" : "watchify -v -t brfs -x public/libs/three.js app/planetWorker.js -o public/static/pw.js",
+		"watch" : "npm run buildlib-js & npm run watch-js & npm run watch-worker-js",
+
 		"test" : "run some sort of test"
 	}
 

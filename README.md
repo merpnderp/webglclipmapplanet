@@ -3,8 +3,17 @@ webglclipmapplanet
 
 A WebGL/Three.js library for real time LoD geometric clipmap planets
 
-
 ##Installing Dependencies
+
+###Install all dependencies locally
+
+```
+
+sudo npm install
+
+```
+
+###Install all dependencies seperately
 
 ####browserify
 
@@ -74,37 +83,31 @@ npm config set strict-ssl false
 
 ## Building Project
 
-Under the public folder run the ./buildlib.sh script.
+Building projects is handled with npm
+
+https://www.npmjs.org/
 
 ```
 
-cd public
-./build-manager build
+npm build
 
 ```
 
+or for debugging with watchify
+
+```
+
+npm watch
+
+```
 
 ## Running Project
 
-This project requires two watchify proccesses to properly function.
-Using the build-manager to run the project will start these processes for you.
-
-This will also start a python SimpleHTTPServer on port 8000
+This will build the project and then start the node webserver
 
 ```
 
-cd public
-./build-manager run
+npm start
 
 ```
 
-#####Alternatively
-
-If you do not wish to run with the python SimpleHTTPServer you can with this command:
-
-```
-
-cd public
-./build-manager run-without-web-server
-
-```
