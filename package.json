@@ -15,7 +15,7 @@
 	},
 
 	"scripts": {
-		"start": "npm run build & node app.js",
+		"start": "node app.js",
 		"start-dev": "npm run watch & npm start",
 
 		"build-js": "browserify -t brfs -x public/libs/three.js -x public/libs/stats.js app/main.js -o public/static/app.js",

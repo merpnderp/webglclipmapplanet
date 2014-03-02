@@ -103,11 +103,19 @@ npm watch
 
 ## Running Project
 
-This will build the project and then start the node webserver
+Normally starting the project
 
 ```
 
 npm start
+
+```
+
+Starting the project for debugging
+
+```
+
+npm start-dev
 
 ```
 
