@@ -1,0 +1,26 @@
+{
+	"name": "planet",
+	"version": "0.0.1",
+	"private": true,
+	
+	"dependencies": {
+		"express": "*",
+		"browserify": "*",
+		"brfs": "*",
+		"uglifyjs": "*"
+	},
+
+	"devDependencies": {
+		"watchify": "*"
+	},
+
+	"scripts": {
+		"start": "node app.js",
+		"build-js": "browserify publis/app.js | uglifyjs -mc > static/bundle.js",
+		"buildlib-js": "broswerify public/lib/lib.js | uglifyjs -mc > static/lib.js",
+		"watch-js" : "watchify ",
+		"watch" : "npm run watch-js & npm run watchWorker-js",
+		"test" : "run some sort of test"
+	}
+
+}
