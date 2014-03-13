@@ -2,7 +2,7 @@
  A simple bootstrap file to test and demo the library
  */
 
-var fov = 90, resolution = 32, radius = 6378100, lowestPossibleHeight = 2;
+var fov = 90, resolution = 32, radius = 6378137, lowestPossibleHeight = 2;
 
 var numberOfClipMapLevels = require('./numberOfClipMapLevelsFinder');
 var scene = require('./scene.js')();
