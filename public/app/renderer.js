@@ -1,20 +1,21 @@
-
 var THREE = require('../libs/three.js');
 
-module.exports = function(){
-	var container = document.getElementById( 'container' );
-	container.innerHTML = "";
-	var renderer = new THREE.WebGLRenderer( { clearColor: 0x000000 } );
-	renderer.sortObjects = false;
-  renderer.autoClear = false;
-  container.appendChild( renderer.domElement );
+module.exports = function () {
 
-	var updateSize = function () {
-    renderer.setSize( container.offsetWidth, container.offsetHeight );
-  };
+    var container = document.getElementById('container');
+    container.innerHTML = "";
+    var renderer = new THREE.WebGLRenderer({ clearColor: 0x000000 });
+    renderer.sortObjects = false;
+    renderer.autoClear = false;
+    container.appendChild(renderer.domElement);
 
-  window.addEventListener( 'resize', updateSize, false );
-  updateSize();
+    var updateSize = function () {
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+    };
 
-  return renderer;
+    window.addEventListener('resize', updateSize, false);
+    updateSize();
+
+    return renderer;
+
 }

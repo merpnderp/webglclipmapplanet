@@ -1,24 +1,26 @@
 /*
-	A simple bootstrap file to test and demo the library
-*/
+ A simple bootstrap file to test and demo the library
+ */
 
+var fov = 90, resolution = 32, radius = 6378100, lowestPossibleHeight = 2;
 
-var THREE = require('../libs/three.js');
-var scene = require('./scene.js');
-var camera = require('./camera.js');
-var renderer = require('./renderer.js');
+var numberOfClipMapLevels = require('./numberOfClipMapLevelsFinder');
+var scene = require('./scene.js')();
+var camera = require('./camera.js')({fov: fov});
+var renderer = require('./renderer.js')();
+
+var clipMapCount = numberOfClipMapLevels(radius, resolution, fov, lowestPossibleHeight );
+
 var SphericalTerrain = require('./sphericalTerrain.js');
 
-var clock = new THREE.Clock();
-
-var terrain = new SphericalTerrain();
+var terrain = new SphericalTerrain(resolution, radius, clipMapCount);
 
 scene.add(terrain);
 
-function animate(){
+function animate() {
 
-	window.requestAnimationFrame(animate);
-	
-	renderer.render(scene, camera);
+    window.requestAnimationFrame(animate);
+
+    renderer.render(scene, camera);
 
 }

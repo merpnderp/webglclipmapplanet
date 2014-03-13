@@ -1,20 +1,20 @@
-
-
 var THREE = require('../libs/three.js');
 
-module.exports = function(){
+module.exports = function (options) {
 
-	var camera = new THREE.PerspectiveCamera( 90, 1, 1, 7000000 );
-  camera.position.z = 80;
-  camera.up = new THREE.Vector3( 0, 0, 1 );
+    var fov = options.fov ? options.fov : 90;
 
-  var updateSize = function () {
-    camera.aspect = container.offsetWidth / container.offsetHeight;
-    camera.updateProjectionMatrix();
-  };
+    var camera = new THREE.PerspectiveCamera(fov, 1, 1, 7000000);
+    camera.position.z = 80;
+    camera.up = new THREE.Vector3(0, 0, 1);
 
-  window.addEventListener( 'resize', updateSize, false );
-  updateSize();
+    var updateSize = function () {
+        camera.aspect = container.offsetWidth / container.offsetHeight;
+        camera.updateProjectionMatrix();
+    };
 
-  return camera;
+    window.addEventListener('resize', updateSize, false);
+    updateSize();
+
+    return camera;
 }
