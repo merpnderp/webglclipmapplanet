@@ -1,8 +1,9 @@
 var THREE = require('../libs/three.js');
+var settings = require('./settings.js');
 
-module.exports = function (options) {
+module.exports = function () {
 
-    var fov = options.fov ? options.fov : 90;
+    var fov = settings.fov;
 
     var camera = new THREE.PerspectiveCamera(fov, 1, 1, 7000000);
     camera.position.z = 80;

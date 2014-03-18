@@ -4,7 +4,7 @@
 
 var THREE = require('../libs/three.js');
 
-module.exports = function(){
+module.exports = function () {
 
     var scene = new THREE.Scene();
     //scene.fog = new THREE.Fog( 0x000000, 200, 1000 );
