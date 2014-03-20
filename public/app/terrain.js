@@ -56,6 +56,8 @@ Terrain.prototype = {
                 if (this.clipMaps[i].hidden) {
                     this.clipMaps[i].show();
                 }
+								this.clipMaps[i].theta = this.terrainCamera.theta;
+								this.clipMaps[i].phi = this.terrainCamera.phi;
                 //snap positions to grid
             }
         }

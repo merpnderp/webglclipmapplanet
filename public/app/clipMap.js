@@ -12,6 +12,9 @@ var clipMap = function (scale, geo) {
     this.hidden = false;
     this.geo = geo;
     this.meshes = [];
+		this.phi = 0;
+		this.theta = 0;
+
     // Create center layer first
     // +---+---+
     // | O | O |
